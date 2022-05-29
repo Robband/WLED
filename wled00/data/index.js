@@ -128,7 +128,9 @@ function tglLabels()
 }
 
 function cTheme(light) {
+	const html = document.getElementsByTagName( 'html' )[0];
 	if (light) {
+		html.setAttribute( 'class', 'light' );
 		sCol('--c-1','#eee');
 		sCol('--c-f','#000');
 		sCol('--c-2','#ddd');
@@ -149,6 +151,7 @@ function cTheme(light) {
 		sCol('--c-tbh','rgba(204, 204, 204, var(--t-b))');
 		d.getElementById('imgw').style.filter = "invert(0.8)";
 	} else { // default dark theme
+		html.setAttribute( 'class', 'dark' );
 		sCol('--c-1','#111');
 		sCol('--c-f','#fff');
 		sCol('--c-2','#222');
